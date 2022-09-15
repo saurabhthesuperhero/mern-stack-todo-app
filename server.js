@@ -1,11 +1,22 @@
 // server.js
+require("dotenv").config(); //added
 const express = require("express");
-
+const connectDB = require("./config/db"); //added
 const app = express();
+
+
+// routes
+const todo = require("./routes/todo"); // added
+
+// connect database
+connectDB();//added
 
 // initialize middleware
 app.use(express.json({ extended: false }));
 app.get("/", (req, res) => res.send("Server up and running"));
+
+// use routes
+app.use("/api/todo", todo); // added
 
 // setting up port
 const PORT = process.env.PORT || 8000;
