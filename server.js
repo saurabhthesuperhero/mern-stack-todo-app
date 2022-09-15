@@ -1,15 +1,19 @@
 // server.js
 require("dotenv").config(); //added
 const express = require("express");
+const cors = require("cors"); // added
+
 const connectDB = require("./config/db"); //added
 const app = express();
-
 
 // routes
 const todo = require("./routes/todo"); // added
 
 // connect database
 connectDB();//added
+
+// cors
+app.use(cors({ origin: true, credentials: true })); // added
 
 // initialize middleware
 app.use(express.json({ extended: false }));
