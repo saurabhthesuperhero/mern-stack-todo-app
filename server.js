@@ -3,15 +3,15 @@ require("dotenv").config(); //added
 const express = require("express");
 const cors = require("cors"); // added
 
-const connectDB = require("./config/db"); //added
+const configDB = require("./config/db"); //added
 const app = express();
 
 // routes
 const todo = require("./routes/todo"); // added
 
 // connect database
-connectDB();//added
-
+// config();//added
+// configDB.connectionDB();
 // cors
 app.use(cors({ origin: true, credentials: true })); // added
 

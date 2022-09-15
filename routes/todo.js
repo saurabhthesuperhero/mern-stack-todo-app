@@ -1,6 +1,7 @@
 // router/todo.js
 const express = require("express");
 const router = express.Router();
+const helper = require("../services/helper")
 
 
 const {
@@ -15,7 +16,16 @@ const {
  * @description get all todo
  * @access public
  */
- router.get("/", getAllTodo);
+//  router.get("/", getAllTodo);
+router.get("/", async function(req, res, next) {
+    try {
+      res.json(await helper.getMultiple(req.query.page));
+    } catch (err) {
+      console.error(`Error while data `, err.message);
+      next(err);
+    }
+  });
+
 
  /**
   * @route POST api/todo

@@ -1,6 +1,16 @@
 // controllers/todo.js
 const Todo = require("../models/todo");
 
+// exports.getAllTodo = (req, res) => {
+//     Todo.find()
+//         .then((todo) => res.json(todo))
+//         .catch((err) =>
+//             res
+//                 .status(404)
+//                 .json({ message: "Todo not found", error: err.message })
+//         );
+// };
+
 exports.getAllTodo = (req, res) => {
     Todo.find()
         .then((todo) => res.json(todo))

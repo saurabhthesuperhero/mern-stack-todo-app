@@ -1,0 +1,5 @@
+my sql:::::
+password:: Q;RkYjEP7En0
+User: jgsigjap_demo
+
+Database: jgsigjap_demo_learn
